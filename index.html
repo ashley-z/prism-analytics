@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prism - See Blockchain Clearly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Brand Colors */
+        --color-primary: #7C3AED;       /* Soft Purple */
+        --color-secondary: #A78BFA;     /* Light Purple */
+        
+        /* Neutral Palette */
+        --color-bg: #FEFEFE;            /* Warm White */
+        --color-surface: #FAF9FB;       /* Lavender Mist */
+        --color-surface-elevated: #F5F3F7; /* Lilac Tint */
+        
+        /* Text Colors */
+        --color-text-primary: #2D1B3D;  /* Deep Plum */
+        --color-text-secondary: #5A4A68; /* Mauve */
+        --color-text-tertiary: #8F8099;  /* Dusty Mauve */
+        
+        /* Semantic Colors */
+        --color-success: #059669;       /* Sage Green */
+        --color-warning: #78716C;       /* Taupe */
+        --color-error: #DC2626;         /* Berry */
+        
+        /* Borders */
+        --color-border: #F5F3F7;
+      }
+
+      /* Dark Mode Overrides (Maintained for compatibility, mapped to brand logic) */
+      [data-theme='dark'] {
+        --color-primary: #A78BFA;
+        --color-secondary: #7C3AED;
+        --color-bg: #0F0915;
+        --color-surface: #1A1025;
+        --color-surface-elevated: #2D1B3D;
+        --color-text-primary: #FAF9FB;
+        --color-text-secondary: #C4B5D0;
+        --color-text-tertiary: #8F8099;
+        --color-border: #3E2A52;
+        --color-success: #10B981;
+        --color-warning: #A8A29E;
+        --color-error: #EF4444;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
+        transition: background-color 0.3s, color 0.3s;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-text-tertiary);
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-text-secondary);
+      }
+
+      /* Brand Utilities */
+      .btn-primary-gradient {
+        background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+      }
+      .btn-primary-gradient:hover {
+        box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+        transform: translateY(-2px);
+      }
+      
+      .shadow-card {
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      }
+
+      /* Logo Pulse Animation */
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(0.95); }
+      }
+      .animate-pulse-dot {
+        animation: pulse-dot 1.5s ease-in-out infinite;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: ['class', '[data-theme="dark"]'],
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              bg: 'var(--color-bg)',
+              surface: 'var(--color-surface)',
+              'surface-elevated': 'var(--color-surface-elevated)',
+              'text-primary': 'var(--color-text-primary)',
+              'text-secondary': 'var(--color-text-secondary)',
+              'text-tertiary': 'var(--color-text-tertiary)',
+              success: 'var(--color-success)',
+              warning: 'var(--color-warning)',
+              error: 'var(--color-error)',
+              border: 'var(--color-border)',
+            },
+            fontFamily: {
+              sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              'card': '0 4px 24px rgba(0,0,0,0.08)',
+              'glow-success': '0 0 8px rgba(5, 150, 105, 0.4)',
+              'glow-error': '0 0 8px rgba(220, 38, 38, 0.4)',
+            },
+            borderRadius: {
+              'card': '12px',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+  <body class="antialiased selection:bg-primary selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
